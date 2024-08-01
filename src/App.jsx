@@ -13,9 +13,8 @@ function App() {
       </div>
       <div className='grid grid-cols-3 gap-2 p-4'>
 
-      {/* <NextPayoutCard title={"Next Payout"} amount={"2,312,.23"} orderCount={23} orderDate={"Today, 4:00PM"} />
-      <RevenueCard title={"Amount Pending"} amount={"2,312,.23"} orderCount={23}  /> */}
-        <RevenueCard title={"Amount Pending"} amount={"92,312.20"} orderCount={23}  />
+      <NextPayoutCard title={"Next Payout"} amount={"2,312,.23"} orderCount={23} orderDate={"Today, 4:00PM"} />
+        {/* <RevenueCard title={"Amount Pending"} amount={"92,312.20"} orderCount={23}  /> */}
       </div>
     </div>
   )

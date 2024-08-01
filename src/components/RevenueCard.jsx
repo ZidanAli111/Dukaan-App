@@ -11,7 +11,6 @@ export const RevenueCard = ({
                 </path>
             </svg>
         </h5>
-
         <div className="flex justify-between  items-center  ">
             <p className="font-medium text-3xl">
                 ₹{amount}

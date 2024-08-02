@@ -22,8 +22,8 @@ export const RevenueCard = ({
                 </svg>
             </p> : null
             }
-        </div >
-    </div >
+        </div>
+    </div>
 }
 
 

@@ -2,7 +2,6 @@ export const AmountProceed = ({
     title,
     amount
 }) => {
-
     return <div className="flex flex-grow flex-col p-5 bg-white rounded-[8px] gap-4   h-fit shadow-md min-w-[300px]">
         <h5 className="flex items-center gap-3 text-[#4D4D4D]">
             {title}
@@ -14,8 +13,6 @@ export const AmountProceed = ({
         <div className="felx justify-between items-center">
             <p className="text-3xl font-medium">₹{amount}</p>
         </div>
-
-        
     </div>
 
 }

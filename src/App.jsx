@@ -3,6 +3,7 @@ import { AmountProceed } from './components/AmountProceed'
 import { NextPayoutCard } from './components/NextPayoutCard'
 import { RevenueCard } from './components/RevenueCard'
 import { Transactions } from './components/Transactions'
+import { TransactionsStatus } from './components/TransactionsStatus'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <AmountProceed title={"Amount Processed"} amount={"23,92,312.19"}/>
       </div>
       <Transactions></Transactions>
+      <TransactionsStatus></TransactionsStatus>
     </div>
   )
 }

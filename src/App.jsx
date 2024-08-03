@@ -1,6 +1,7 @@
 import './App.css'
 import { AmountProceed } from './components/AmountProceed'
 import { NextPayoutCard } from './components/NextPayoutCard'
+import { PaymentHeader } from './components/PaymentHeader'
 import { RevenueCard } from './components/RevenueCard'
 import { Transactions } from './components/Transactions'
 import { TransactionsStatus } from './components/TransactionsStatus'
@@ -8,9 +9,7 @@ import { TransactionsStatus } from './components/TransactionsStatus'
 function App() {
   return (
     <div className='grid grid-row-3 gap-2 bg-gray-200'>
-      <div className='text-2xl p-4 font-medium shadow-md'>
-        Payouts
-      </div>
+      <PaymentHeader></PaymentHeader>
       <div className='text-5xl mb-8 p-4 font-medium'> 
         Overview
       </div>

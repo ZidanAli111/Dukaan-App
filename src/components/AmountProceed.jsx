@@ -10,7 +10,7 @@ export const AmountProceed = ({
                 </path>
             </svg>
         </h5>
-        <div className="felx justify-between items-center">
+        <div className="felx justify-between items-center bg-red">
             <p className="text-3xl font-medium">₹{amount}</p>
         </div>
     </div>

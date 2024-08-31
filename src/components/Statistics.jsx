@@ -1,5 +1,10 @@
+import tempMax from "../assets/tempMax.png";
+import tempLow from "../assets/tempLow.png";
+import tempMedium from "../assets/tempMedium.png";
+import humidityMeter from "../assets/humidityMeter.png";
+
 export const Statistics = () => {
-    return <div id="parent-container" className="bg-slate-300">
+    return <div id="parent-container" className="bg-gray-200">
         <header className="bg-[#00675a] flex flex-row justify-between px-2">
             <div className="flex items-center justify-between">
                 <div className="text-white font-medium text-xl mr-5">IOTdashboard</div>
@@ -12,22 +17,68 @@ export const Statistics = () => {
             </div>
         </header>
         <div id="patent-body-container flex flex-col">
-            <div id="top-button-container" className="flex m-2   text-center justify-start">
-                <div className="bg-white  mr-2 px-2 rounded-sm">Home</div>
-                <div className="bg-white mr-2 px-2 rounded-sm ">LAB ANALYTICS</div>
-                <div className="bg-white px-2 rounded-sm">ALARM SETTINGS</div>
+            <div id="top-sub-body-container" className="flex m-2   text-center justify-start">
+                <button className="bg-white  mr-2 px-2 rounded-sm">HOME</button>
+                <button className="bg-white mr-2 px-2 rounded-sm ">LAB ANALYTICS</button>
+                <button className="bg-white px-2 rounded-sm">ALARM SETTINGS</button>
             </div>
-            <div id="parent-main-body-container" className="flex  bg-slate-300">
-                <div id="parent-left-main-body-container" className="flex flex-col px-2">
-                   
-                    <div className="bg-white">
-                        LEFT
+            <div id="parent-main-body-container" className="flex  g-gray-200">
+                <div id="parent-left-sub-body-container" className="flex flex-col px-2">
+                    <div id="item-container" className="bg-white flex  justify-between gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
+                        <div id="temperature-channel-container" className="flex item item">
+                            <img className="h-[50px]" src={tempMax} alt="max temperature"></img>
+                            <div id="channel-container" className="mt-2">
+                                <h1 className="font-medium">Channel 1</h1>
+                                <p className="text-slate-400 text-[12px] font-medium">Last update 9m ago</p>
+                            </div>
+                        </div>
+                        <div id="temperature-degree" className=" text-red-600 font-semibold  text-[40px] item">20.9  °C</div>
                     </div>
-                </div>
-                <div id="parent-right-main-body-container" className="flex bg-slate-300">
-                    <div>
+
+                    <div id="item-container" className="bg-white flex  justify-between gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
+                        <div id="temperature-channel-container" className="flex item item">
+                            <img className="h-[50px]" src={tempLow} alt="max temperature"></img>
+                            <div id="channel-container" className="mt-2">
+                                <h1 className="font-medium">Channel 2</h1>
+                                <p className="text-slate-400 text-[12px] font-medium">Last update 9m ago</p>
+                            </div>
+                        </div>
+                        <div id="temperature-degree" className=" text-blue-400 font-semibold  text-[40px] item">18.99  °C</div>
+                    </div>
+                    <div id="item-container" className="bg-white flex  justify-between gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
+                        <div id="temperature-channel-container" className="flex item item">
+                            <img className="h-[50px]" src={tempMax} alt="max temperature"></img>
+                            <div id="channel-container" className="mt-2">
+                                <h1 className="font-medium">Channel 3</h1>
+                                <p className="text-slate-400 text-[12px] font-medium">Last update 9m ago</p>
+                            </div>
+                        </div>
+                        <div id="temperature-degree" className=" text-red-600 font-semibold  text-[40px] item">21.11  °C</div>
+                    </div>
+                    <div id="item-container" className="bg-white flex  justify-between gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
+                        <div id="temperature-channel-container" className="flex item item">
+                            <img className="h-[50px]" src={tempMedium} alt="max temperature"></img>
+                            <div id="channel-container" className="mt-2">
+                                <h1 className="font-medium">Channel 4</h1>
+                                <p className="text-slate-400 text-[12px] font-medium">Last update 9m ago</p>
+                            </div>
+                        </div>
+                        <div id="temperature-degree" className=" text-black font-semibold  text-[40px] item">20.37  °C</div>
+                    </div>
+                    <div id="item-container" className="bg-white  gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
+                       
+                        <img className="h-[300px] w-[500px] items-center" src={humidityMeter} alt="max temperature"></img>
                         
                     </div>
+
+
+                </div>
+                <div id="parent-right-sub-body-container" className="flex flex-col px-2">
+                    <div className="bg-white">RIGHT 1   </div>
+                    <div className="bg-white">RIGHT 2   </div>
+                    <div className="bg-white">RIGHT 3  </div>
+                    <div className="bg-white">RIGHT 4   </div>
+                    <div className="bg-white">RIGHT 5   </div>
                 </div>
             </div>
         </div>

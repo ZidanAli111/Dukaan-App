@@ -167,7 +167,7 @@ const radialGaugeOptions = {
 };
 
 const ChannelItem = ({ src, alt, channel, degree, degreeColor }) => (
-    <div className="bg-white flex items-center  rounded-sm p-4  shadow-md">
+    <div className="bg-white flex items-center gap-2 rounded-sm p-3 mb-2 shadow-md">
         <img className="h-[50px]" src={src} alt={alt} />
         <div className="flex-1">
             <h1 className="font-medium">{channel}</h1>
@@ -198,7 +198,7 @@ const RadialGauge = ({ options }) => (
 );
 
 export const Statistics = () => (
-    <div id="parent-container" className="bg-gray-200 h-screen">
+    <div id="parent-container" className="bg-gray-200">
         <header className="bg-[#00675a] flex flex-row justify-between px-2 py-2">
             <div className="flex items-center justify-between">
                 <div className="text-white font-medium text-xl mr-5">IOTdashboard</div>
@@ -211,46 +211,48 @@ export const Statistics = () => (
             </div>
         </header>
 
-        <div className='flex justify-start gap-3 mt-2 pl-4'>
+        <div className='flex justify-start gap-3 mt-2 pl-8'>
             <button className='bg-white rounded-sm py-1 px-3 shadow-sm'>HOME</button>
             <button className='bg-white rounded-sm py-1 px-3 shadow-sm'>LAB ANALYTICS</button>
             <button className='bg-white rounded-sm py-1 px-3 shadow-sm'>ALARM SETTINGS</button>
         </div>
+        <div id="parent-main-body-container" className="flex flex-col lg:flex-row gap-4 p-4 bg-gray-200">
+            {/* Left side grid: Channels container and Humidity Meter */}
+            <div id="left-grid" className="flex flex-col space-y-4 lg:w-[30%]">
+                {/* Channels container */}
+                <div id="channels-container" className="bg-gray-200 border-none px-4 shadow-sm flex-1">
+                    <div id="channels-list" className="flex flex-col gap-3 bg-gray-200">
+                        <ChannelItem src={tempMax} alt="max temperature" channel="Channel 1" degree="20.9" degreeColor="red-600" />
+                        <ChannelItem src={tempLow} alt="min temperature" channel="Channel 2" degree="18.99" degreeColor="blue-400" />
+                        <ChannelItem src={tempMedium} alt="medium temperature" channel="Channel 3" degree="21.11" degreeColor="red-600" />
+                        <ChannelItem src={tempMax} alt="max temperature" channel="Channel 4" degree="20.37" degreeColor="black" />
+                    </div>
+                </div>
 
-        {/* Main grid container */}
-        <div id="parent-main-body-container" className="grid grid-cols-[30%,70%]  gap-4 p-4 bg-gray-200">
-            {/* Channels container */}
-            <div id="channels-container" className="bg-gray-200  flex flex-col justify-between  border-none shadow-sm">
-                {/* <div id="channels-list" className="flex flex-col   gap-3 bg-gray-200"> */}
-                <ChannelItem src={tempMax} alt="max temperature" channel="Channel 1" degree="20.9" degreeColor="red-600" />
-                <ChannelItem src={tempLow} alt="min temperature" channel="Channel 2" degree="18.99" degreeColor="blue-400" />
-                <ChannelItem src={tempMedium} alt="medium temperature" channel="Channel 3" degree="21.11" degreeColor="red-600" />
-                <ChannelItem src={tempMax} alt="max temperature" channel="Channel 4" degree="20.37" degreeColor="black" />
-                {/* </div> */}
+                {/* Humidity Meter */}
+                <div id="humidity-meter" className="bg-white shadow-sm flex-1">
+                    <RadialGauge options={radialGaugeOptions} />
+                </div>
             </div>
 
+            {/* Right side grid: Temperature and Humidity graph */}
+            <div id="right-grid" className="flex flex-col space-y-4 lg:w-[70%]">
+                {/* Temperature container */}
+                <div id="temperature-container" className="bg-white p-4 shadow-sm flex-1">
+                    <h1 className='font-medium'>Temperature</h1>
+                    <GraphContainer options={tempChartOptions} series={tempChartSeries} />
+                </div>
 
-
-            {/* Temperature container */}
-            <div id="temperature-container" className="bg-white shadow-sm">
-                <h1 className='font-medium pl-2'>Temperature</h1>
-                <GraphContainer options={tempChartOptions} series={tempChartSeries} />
-            </div>
-
-            {/* Humidity Meter */}
-            <div id="humidity-meter" className="bg-white shadow-sm">
-                <RadialGauge options={radialGaugeOptions} />
-            </div>
-
-            {/* Humidity container */}
-            <div id="humidity-container" className="bg-white shadow-sm">
-                <h1 className='font-medium pl-2'>Humidity</h1>
-                <ApexCharts
-                    options={humidityChartOptions}
-                    series={humidityChartSeries}
-                    type="area"
-                    height={300}
-                />
+                {/* Humidity container */}
+                <div id="humidity-container" className="bg-white p-4 shadow-sm flex-1">
+                    <h1 className='font-medium'>Humidity</h1>
+                    <ApexCharts
+                        options={humidityChartOptions}
+                        series={humidityChartSeries}
+                        type="area"
+                        height={300}
+                    />
+                </div>
             </div>
         </div>
     </div>

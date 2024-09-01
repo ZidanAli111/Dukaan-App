@@ -2,10 +2,12 @@ import tempMax from "../assets/tempMax.png";
 import tempLow from "../assets/tempLow.png";
 import tempMedium from "../assets/tempMedium.png";
 import humidityMeter from "../assets/humidityMeter.png";
+import tempGraph from "../assets/tempGraph.png";
+import humidityGraph from "../assets/humidityGraph.jpg";
 
 export const Statistics = () => {
     return <div id="parent-container" className="bg-gray-200">
-        <header className="bg-[#00675a] flex flex-row justify-between px-2">
+        <header className="bg-[#00675a] flex flex-row justify-between  px-2 py-2">
             <div className="flex items-center justify-between">
                 <div className="text-white font-medium text-xl mr-5">IOTdashboard</div>
                 <div className="text-white font-medium text-sm">Analytics</div>
@@ -66,19 +68,45 @@ export const Statistics = () => {
                         <div id="temperature-degree" className=" text-black font-semibold  text-[40px] item">20.37  °C</div>
                     </div>
                     <div id="item-container" className="bg-white  gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
-                       
+
                         <img className="h-[300px] w-[500px] items-center" src={humidityMeter} alt="max temperature"></img>
-                        
+
                     </div>
 
 
                 </div>
-                <div id="parent-right-sub-body-container" className="flex flex-col px-2">
-                    <div className="bg-white">RIGHT 1   </div>
-                    <div className="bg-white">RIGHT 2   </div>
-                    <div className="bg-white">RIGHT 3  </div>
-                    <div className="bg-white">RIGHT 4   </div>
-                    <div className="bg-white">RIGHT 5   </div>
+                <div id="parent-right-sub-body-container" className="flex flex-col justify-evenly ">
+                    <div id="item-container" className="flex flex-col bg-white">
+                        <div id="top-container" className="flex justify-between ">
+                            <div>Temperature</div>
+                            <div id="icon-container" className="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <img className="  h-full w-full" src={tempGraph} alt="max temperature"></img>
+                    </div>
+                    <div id="item-container" className="flex flex-col bg-white">
+                        <div id="top-container" className="flex justify-between ">
+                            <div>Humidity</div>
+                            <div id="icon-container" className="flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <img className="  h-full w-full" src={humidityGraph} alt="max temperature"></img>
+
+                    </div>
+
+
                 </div>
             </div>
         </div>

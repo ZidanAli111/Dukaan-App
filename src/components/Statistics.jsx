@@ -25,6 +25,7 @@ export const Statistics = () => {
                 <button className="bg-white px-2 rounded-sm">ALARM SETTINGS</button>
             </div>
             <div id="parent-main-body-container" className="flex  g-gray-200">
+
                 <div id="parent-left-sub-body-container" className="flex flex-col px-2">
                     <div id="item-container" className="bg-white flex  justify-between gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
                         <div id="temperature-channel-container" className="flex item item">
@@ -36,7 +37,6 @@ export const Statistics = () => {
                         </div>
                         <div id="temperature-degree" className=" text-red-600 font-semibold  text-[40px] item">20.9  °C</div>
                     </div>
-
                     <div id="item-container" className="bg-white flex  justify-between gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
                         <div id="temperature-channel-container" className="flex item item">
                             <img className="h-[50px]" src={tempLow} alt="max temperature"></img>
@@ -67,17 +67,14 @@ export const Statistics = () => {
                         </div>
                         <div id="temperature-degree" className=" text-black font-semibold  text-[40px] item">20.37  °C</div>
                     </div>
-                    <div id="item-container" className="bg-white  gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
-
+                    <div id="humidity-meter-container" className="bg-white  gap-10 rounded-[2px] p-3 mb-2 shadow-sm">
                         <img className="h-[300px] w-[500px] items-center" src={humidityMeter} alt="max temperature"></img>
-
                     </div>
-
-
                 </div>
+
                 <div id="parent-right-sub-body-container" className="flex flex-col justify-evenly ">
                     <div id="item-container" className="flex flex-col bg-white">
-                        <div id="top-container" className="flex justify-between ">
+                        <div id="temperature-container" className="flex justify-between ">
                             <div>Temperature</div>
                             <div id="icon-container" className="flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -90,7 +87,7 @@ export const Statistics = () => {
                         </div>
                         <img className="  h-full w-full" src={tempGraph} alt="max temperature"></img>
                     </div>
-                    <div id="item-container" className="flex flex-col bg-white">
+                    <div id="humidity-container" className="flex flex-col bg-white">
                         <div id="top-container" className="flex justify-between ">
                             <div>Humidity</div>
                             <div id="icon-container" className="flex">
@@ -102,12 +99,10 @@ export const Statistics = () => {
                                 </svg>
                             </div>
                         </div>
-                        <img className="  h-full w-full" src={humidityGraph} alt="max temperature"></img>
-
+                        <img className=" h-full w-full" src={humidityGraph} alt="max temperature"></img>
                     </div>
-
-
                 </div>
+
             </div>
         </div>
     </div>
